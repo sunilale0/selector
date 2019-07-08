@@ -4,21 +4,18 @@ import Shape from './Shape';
 class Selector extends Component{
 
   state = {
-    name: ''
+    shapeName: 'Guess Name'
   }
 
 
 
-  changeText = (event) => {
+  changeText = (shapeName) => {
 
-    console.log("changeText: " + event.target.shape)
-    console.log('changetext: ' + event.target.value)
-    let shape = '';
-    if (event.target.shape === 'square') {shape = 'Square'};
-    if (event.target.shape === 'circle') shape = 'Circle';
-    if (event.target.shape === 'triangle') shape = 'Triangle';
-    this.setState({
-      name: shape
+    // console.log("changeText: " + props.value or props.someName)
+    console.log("changeText: " + shapeName)
+  
+    this.setState({ 
+      shapeName: shapeName
     })
     
   }
@@ -31,7 +28,7 @@ class Selector extends Component{
       <div className='container'>
         <nav className='navbar'>
           <h1>
-            Selected: {this.state.name}
+            Selected: {this.state.shapeName}
           </h1>
         </nav>
 
@@ -40,9 +37,9 @@ class Selector extends Component{
           <Shape alt="Circle" onClick={this.changeText} value='circle'/>
           <Shape alt="Triangle" onClick={this.changeText} value='triangle'/> */}
 
-          <Shape shape='square' onClick={this.changeText} value = 'square'/>
-        <Shape shape='circle' onClick={this.changeText} value = 'circle'/>
-        <Shape shape='triangle' onClick={this.changeText} value = 'triangle'/>
+        <Shape shape='square' selectShape={this.changeText} />
+        <Shape shape='circle' selectShape={this.changeText}/>
+        <Shape shape='triangle' selectShape={this.changeText} />
         </div>
 
         

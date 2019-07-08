@@ -2,9 +2,9 @@ import React from 'react';
 
 const shape = (props) => {
 
-
+    console.log('[Shape.js] function shape')
     return (
-        <div className={props.shape} />
+        <div className={props.shape} onClick={()=>props.selectShape(props.shape)}/>
     );
 
 }
