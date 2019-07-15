@@ -1,3 +1,4 @@
+# The Shape Selecter - React version
 The app gives you the name of the shape that has been selected. For now, only three shapes square, circle, and triangle have been used.
 
 - The application uses React.
