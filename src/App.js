@@ -10,12 +10,12 @@ class Selector extends Component{
 
 
   changeText = (shapeName) => {
-
     // console.log("changeText: " + props.value or props.someName)
-    console.log("changeText: " + shapeName)
+    console.log("[App.js] changeText: " + shapeName)
   
     this.setState({ 
       shapeName: shapeName
+      //shapeName: event.target.value;
     })
     
   }
@@ -34,7 +34,7 @@ class Selector extends Component{
 
         <div className= 'shape-list'>
           {/* <Shape alt="Square" onClick={this.changeText} value='square'/>
-          <Shape alt="Circle" onClick={this.changeText} value='circle'/>
+          <Shape alt="Circle" onClick={this.changeText} value='circle someName ='something'/>
           <Shape alt="Triangle" onClick={this.changeText} value='triangle'/> */}
 
         <Shape shape='square' selectShape={this.changeText} />
